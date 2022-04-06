@@ -1,42 +1,60 @@
-void main() {
-  EatChicken statusOfEatChicken =  EatChicken.orderChicken;
+import 'dart:math';
 
-  switch(statusOfEatChicken){
-    case EatChicken.none:
-      print('find phone number first');
+enum RockScissorPaper{
+  rock,scissors,paper
+}
+void main() {
+  //0 == ROCK
+  //1 == SISSOR
+  //2 == PAPER
+  int random = Random().nextInt(3); 
+  RockScissorPaper computer = RockScissorPaper.rock;
+
+  switch(random){
+    case 0:
+      computer = RockScissorPaper.rock;
       break;
-    case EatChicken.phoneNumberFound:
-      print('call the restaurant');
+    case 1:
+      computer = RockScissorPaper.scissors;
       break;
-    case EatChicken.callingChickenShop:
-      print('call the restaurant');
-      break;
-    case EatChicken.orderChicken:
-      print('just wait');
-      break;
-    case EatChicken.wait:
-      print('call the restaurant');
-      break;
-    case EatChicken.deliveredChicken:
-      print('call the restaurant');
-      break;
-    case EatChicken.prepareToEat:
-      print('call the restaurant');
-      break;
-    case EatChicken.eat:
-      print('call the restaurant');
+    case 2:
+      computer = RockScissorPaper.paper;
       break;
   }
 
-}
+  const RockScissorPaper me = RockScissorPaper.paper;
 
-enum EatChicken{
-  none,
-  phoneNumberFound,
-  callingChickenShop,
-  orderChicken,
-  wait,
-  deliveredChicken,
-  prepareToEat,
-  eat
+  switch(computer){
+    case RockScissorPaper.rock:
+      if(me == RockScissorPaper.paper){
+        print('I win!!');
+      }else if(me == RockScissorPaper.scissors){
+        print('I lost!!');
+      }else{
+        print('draw');
+      }
+      break;
+    case RockScissorPaper.scissors:
+      if(me == RockScissorPaper.paper){
+        print('I lost!!');
+      }else if(me == RockScissorPaper.scissors){
+        print('draw');
+      }else{
+        print('I win!!');
+      }
+      break;
+    case RockScissorPaper.paper:
+      if(me == RockScissorPaper.paper){
+        print('draw');
+      }else if(me == RockScissorPaper.scissors){
+        print('I win!!');
+      }else{
+        print('I lost!!');
+      }
+      break;
+  }
+
+
+
+  print('$me - $computer');
 }
