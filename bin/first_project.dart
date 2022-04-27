@@ -1,21 +1,40 @@
 void main() {
-  myNameInSentence('yang', 'Victor', middleName: 'victorianoch', age3: 18);
+
+
+   
+  Tesla myTesla = Tesla("red");
+  Tesla myDaughterTesla = Tesla("blue");
+  Tesla myFirstDaughterTesla = Tesla("pink");
+
+
+
+  print(myTesla);
+  myTesla.runTheCar(15);
+  print(myTesla);
+
+
 }
 
-myNameInSentence(
-  String lastName,
-  String givenName, {
-  String? middleName,
-  int? age,
-  int? age1,
-  int? age2,
-  int? age3,
-  int? age4,
-  int? age5,
-}) {
-  if (middleName == null) {
-    print("My name is $givenName $lastName");
-  } else {
-    print("My name is $givenName $middleName $lastName $age3");
+
+class Tesla{
+  String color = "white";
+  int batterySize = 100; //run one kilometer, reduce one battery unit
+
+  //constructor
+  Tesla(String selectedColor){
+    color = selectedColor;
+  }
+
+  @override
+  String toString() {
+    return "Tesla($color, $batterySize)";
+  }
+
+  void hornTheCar() {
+    print("빵~~~~");
+  }
+
+  void runTheCar(int distanceRan){
+    batterySize = batterySize - distanceRan;
   }
 }
