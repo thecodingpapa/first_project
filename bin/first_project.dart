@@ -1,40 +1,39 @@
+import 'user.dart';
+
 void main() {
+  const User victor = User(name: "asdf", isFemale: false, age: 3);
+  const User victor1 = User(name: "asdf", isFemale: false, age: 3);
+  const User victor2 = User(name: "asdf", isFemale: false, age: 3);
+}
 
-
-   
-  Tesla myTesla = Tesla("red");
-  Tesla myDaughterTesla = Tesla("blue");
-  Tesla myFirstDaughterTesla = Tesla("pink");
-
-
-
-  print(myTesla);
-  myTesla.runTheCar(15);
-  print(myTesla);
-
+class Subscription {
 
 }
 
-
-class Tesla{
-  String color = "white";
-  int batterySize = 100; //run one kilometer, reduce one battery unit
-
-  //constructor
-  Tesla(String selectedColor){
-    color = selectedColor;
-  }
-
-  @override
-  String toString() {
-    return "Tesla($color, $batterySize)";
-  }
-
-  void hornTheCar() {
-    print("빵~~~~");
-  }
-
-  void runTheCar(int distanceRan){
-    batterySize = batterySize - distanceRan;
-  }
+enum Term{
+  annually, monthly
 }
+
+
+
+
+void subscribe(User user, Subscription subscription, Term term,)
+{
+    if (user != null) {
+        if (subscription != null) {
+            if (term == Term.annually) {
+                // subscribe annually
+            } else if (term == Term.monthly) {
+                // subscribe monthly
+            } else {
+              print("term 데이터가 비어있네");
+            }
+        } else {
+            print("구독 페이지로 가기");
+        }
+    } else {
+        
+    }
+}
+
+
